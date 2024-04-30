@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="ScreenPlayMobile" external.linked.project.path="$MODULE_DIR$/ScreenPlayMobile" external.root.project.path="$MODULE_DIR$/ScreenPlayMobile" external.system.id="GRADLE" external.system.module.group="com.marlen" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/ScreenPlayMobile">
+      <excludeFolder url="file://$MODULE_DIR$/ScreenPlayMobile/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/ScreenPlayMobile/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

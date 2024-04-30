@@ -1,0 +1,49 @@
+buildscript {
+    dependencies {
+        classpath('net.serenity-bdd:serenity-gradle-plugin:3.2.5')
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'com.marlen'
+version '1.0-SNAPSHOT'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityVersion = '4.0.16'
+    serenityCucumberVersion = '4.0.16'
+    logbackVersion = '1.4.14'
+    devcoVersion = '2.0.4'
+    junitVersion = '1.10.0'
+}
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-core:${serenityVersion}",
+            "net.serenity-bdd:serenity-screenplay:${serenityVersion}",
+            "net.serenity-bdd:serenity-screenplay-webdriver:${serenityVersion}",
+            "ch.qos.logback:logback-classic:${logbackVersion}",
+            "co.com.devco.automation:automationDevcoLibrary:${devcoVersion}"
+
+    testImplementation "net.serenity-bdd:serenity-junit5:${serenityVersion}",
+            "net.serenity-bdd:serenity-ensure:${serenityVersion}",
+            "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}",
+            "org.junit.platform:junit-platform-runner:${junitVersion}"
+
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+gradle.startParameter.continueOnFailure = true
+test.finalizedBy(aggregate)
